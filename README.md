@@ -1,2 +1,2 @@
-# portfolio
-Personal portfolio for josenunez.org
+# josenunez.org
+Personal portfolio
