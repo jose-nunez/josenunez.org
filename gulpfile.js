@@ -19,7 +19,7 @@ gulp.task('image_min', function(){
 });
 
 gulp.task('sass_compile',function(){
-	gulp.src('src/sass/*.scss')
+	gulp.src('src/css/*.scss')
 		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer({
 			browsers: ['last 3 versions','safari 5', 'ie 6', 'ie 7', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'],
@@ -45,11 +45,11 @@ gulp.task('copyfonts', function() {
 gulp.task('compile_once',['copyfonts','sass_compile','html_min','image_min']);
 gulp.task('compile_watch',function() {
 	gulp.watch('src/fonts/**',['copyfonts']);
-	gulp.watch('src/sass/*.scss',['sass_compile']);
+	gulp.watch('src/css/*.scss',['sass_compile']);
 	gulp.watch('src/*.html',['html_min']);
 	gulp.watch('src/img/*',['image_min']);
 });
-
+gulp.task('default',['compile_once','compile_watch']);
 
 /*
 	VERSIONING & RELASES ______________________________________________________________________

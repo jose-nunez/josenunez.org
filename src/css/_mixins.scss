@@ -1,0 +1,6 @@
+@mixin centered_background($url,$fixed){
+	background-image: url($url);
+	background-position:center;
+	@if($fixed){ background-attachment:fixed; }
+	background-size: cover;
+}
