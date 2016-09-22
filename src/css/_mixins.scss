@@ -4,3 +4,40 @@
 	@if($fixed){ background-attachment:fixed; }
 	background-size: cover;
 }
+
+@mixin divider($icons:false){
+	.divider{
+		text-align:	center;
+		margin:		1.5rem 0;
+		height:		21px;
+		
+		&::before,&::after{
+			display:	inline-block;
+			border-top:	2px solid rgba(20, 20, 20, 0.2);
+			height:		2px;
+			width:		25%;
+			// margin:		auto 30px;
+			content:	"";
+		}
+
+		
+		@each $icon in $icons {
+			&.divider-#{$icon} {
+				background-image:		url("../img/"+ $icon +".png");
+				background-position:	center;
+				background-repeat:		no-repeat;
+				
+				&::before{
+					margin-right:20px;
+				}
+				&::after{
+					margin-left:20px;
+				}
+			}
+		}
+	}
+	
+	@for $i from 1 through 3 {
+		h#{$i} + .divider{ margin-top: 0; }
+	}
+}

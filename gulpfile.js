@@ -12,9 +12,9 @@ var imagemin = require('gulp-imagemin');
 
 
 gulp.task('image_min', function(){
-	gulp.src('src/img/*')
+	gulp.src('src/img/**')
 		.pipe(imagemin())
-		.pipe(gulp.dest('dist/img'))
+		.pipe(gulp.dest('dist/img/'))
 	;
 });
 
