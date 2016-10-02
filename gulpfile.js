@@ -47,7 +47,7 @@ gulp.task('compile_watch',function() {
 	gulp.watch('src/fonts/**',['copyfonts']);
 	gulp.watch('src/css/*.scss',['sass_compile']);
 	gulp.watch('src/*.html',['html_min']);
-	gulp.watch('src/img/*',['image_min']);
+	gulp.watch('src/img/**',['image_min']);
 });
 gulp.task('default',['compile_once','compile_watch']);
 
