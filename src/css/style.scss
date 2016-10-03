@@ -56,7 +56,7 @@ header.main-header{
 }
 
 .main-container{
-	// max-width:960px;
+	max-width:960px;
 	margin: auto;
 	padding: 20px 3em;
 	p{
@@ -72,9 +72,10 @@ header.main-header{
 	// background-color:green;
 	.box-item{
 		box-shadow: 0px 0 10px rgba(0,0,0,0.1);
+		// border: 1px solid black;
+		padding: 0 0 10px 0;
 		// padding-bottom: 10px;
-		padding: 10px 0px;
-		margin: 20px 0px;
+		margin: 15px 0px;
 		// break-inside: avoid;
 		display: inline-block;
 		// display: block;
@@ -84,8 +85,21 @@ header.main-header{
 			opacity: 0.7;
 		}
 		h3{
-			margin-top: 0px; 
+			margin-bottom: 0px; 
 			text-align:center;
+		}
+		.box-links{
+			text-align: center;
+			.link-button{
+
+				text-align: center;
+				display: inline-block;
+				margin: 10px 15px 0 15px;
+				span{
+
+				}
+				
+			}
 		}
 
 	}
