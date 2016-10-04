@@ -82,7 +82,12 @@ header.main-header{
 		img{
 			width: 100%;
 			border-bottom: 1px solid rgba(0,0,0,0.1);
-			opacity: 0.7;
+			opacity: 0.5;
+			transition: opacity 0.4s;
+		}
+		&:hover img{
+			opacity: 1;
+			transition: opacity 0.4s;
 		}
 		h3{
 			margin-bottom: 0px; 
@@ -90,8 +95,16 @@ header.main-header{
 		}
 		.box-links{
 			text-align: center;
+			a{
+				color: #808080;
+				transition:color 0.4s;
+				&:visited{color: #808080;}
+				&:hover{
+					color: #000;
+					transition:color 0.4s;
+				}
+			}
 			.link-button{
-
 				text-align: center;
 				display: inline-block;
 				margin: 10px 15px 0 15px;
