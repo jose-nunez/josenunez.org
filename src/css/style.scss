@@ -100,6 +100,10 @@ header.main-header{
 			margin-bottom: 0px; 
 			text-align:center;
 		}
+		/* .box-list{
+			column-count: 2;
+			list-style: none;
+		} */
 		.box-links{
 			text-align: center;
 			// a{
@@ -121,7 +125,9 @@ header.main-header{
 				
 			}
 		}
-
+		.box-content{
+			padding:15px 10px 0 10px;
+		}
 	}
 	@media (min-width: 550px){
 		.box-item{
