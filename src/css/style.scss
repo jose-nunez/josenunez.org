@@ -1,6 +1,9 @@
 @import 'fonts';
 @import 'mixins';
 
+$screen-medium:550px;
+$screen-large: 960px;
+
 html,body{
 	height:		100%;
 	margin:		0;
@@ -42,10 +45,13 @@ $icons: hammers; // Just one so far!
 @include divider($icons);
 
 header.main-header{
+	
+	@media (orientation:landscape){
+		// height:70%;
+	}
+
 	@include bkg_cover($url:'../img/IMG_0629.jpg',$fixed:true);
 
-	// height:50%; // Don't use percentage, since it's annoying on Chrome the size changes during scroll
-	height:15em;
 	border-bottom: solid 3px black;
 
 	.header-bg-dark{
@@ -54,31 +60,38 @@ header.main-header{
 	
 		@include flexContainer($caxis:center);
 
-		padding:0 25px;
+		padding:50px;
+
+		$myheight: 150px;
+		.header-title-wrapper{
+			margin-bottom: $myheight/2;
+		}
 
 		.header-title{
 			text-align: center;
 			color: white;
-			border: 4px white solid;
+			$border:4px white solid;
+			border: $border;
+			border-radius:5px;
 			max-width: 100%;
 
 			h1,h2{
-				// margin: 1rem 20px;
 				margin: 1rem 2rem;
-				// text-transform: uppercase;
-				
+				// text-transform: uppercase;				
 				// font-size: 3rem;
 			}
 			h1.myname{ font-size: 3rem;}
-			/* 
-			h1.myprofession{ font-size: 3rem;} 
-			*/
+			h1.myprofession{} 
+			.mypic{
+				background-color:white;
+				height: $myheight;
+				margin-bottom: -$myheight/2;
+				border:$border;
+				border-radius:50%;
+			}
 		}
 	}
 	
-	@media (orientation:landscape){
-		height:90%;
-	}
 }
 
 .main-container{
@@ -96,7 +109,7 @@ header.main-header{
 .boxes-container{
 	// background-color:#8ae03a;/* TEMP */
 	
-	@include flexContainer();
+	@include flexContainer($axis:center);
 	// padding: 0 30px;
 
 	.box-item{
@@ -109,23 +122,33 @@ header.main-header{
 		box-shadow: 0px 0 10px rgba(0,0,0,0.1);
 		border: 2px solid rgba(0,0,0,0.1);
 		padding: 0 0 10px 0;
-		img{
-			width: 100%;
-			border-bottom: 1px solid rgba(0,0,0,0.1);
-			opacity: 0.8;
-			transition: opacity 0.4s;
-		}
-		&:hover img{
-			opacity: 1;
-			transition: opacity 0.4s;
-		}
+		
+		$trans-speed: 0.3s;
 
 		.box-img{
+			text-align: center;
 			height: 100px;
 			margin: 10px 10px 0 10px;
-			@include bkg_contain();
-			// @include bkg_center();
+			// @include bkg_contain();
+			img{
+				max-height: 100%;
+				max-width: 100%;
+				// border:none;
+				
+				opacity: 0.5;
+				transition: opacity $trans-speed;
+			}
 		}
+
+		&:hover{
+			box-shadow: 0 0 3px rgba(0,0,0,0.2);
+			transition: box-shadow $trans-speed;
+			.box-img img{
+				opacity: 1;
+				transition: opacity $trans-speed;
+			}
+		}
+
 
 		h3.box-title{
 			margin-bottom: 0px; 
@@ -161,14 +184,14 @@ header.main-header{
 			padding:15px 10px 0 10px;
 		}
 	}
-	@media (min-width: 550px){
+	@media (min-width: $screen-medium){
 		.box-item{
 			margin-left: 10px;
 			margin-right: 10px;
 			flex-basis:45%;
 		}
 	}
-	@media (min-width: 960px){
+	@media (min-width: $screen-large){
 		.box-item{
 			margin-left: 10px;
 			margin-right: 10px;
