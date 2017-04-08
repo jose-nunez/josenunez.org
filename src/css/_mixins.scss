@@ -1,8 +1,24 @@
-@mixin centered_background($url,$fixed){
-	background-image: url($url);
-	background-position:center;
-	@if($fixed){ background-attachment:fixed; }
+
+
+@mixin bkg_contain($url:false,$fixed:false){
+	background-size: contain;
+	@include bkg_center();
+	@include bkg_common($url:$url,$fixed:$fixed);
+}
+
+@mixin bkg_cover($url:false,$fixed:false){
 	background-size: cover;
+	@include bkg_center();
+	@include bkg_common($url:$url,$fixed:$fixed);
+}
+
+@mixin bkg_center(){
+	background-position:center;
+	background-repeat: no-repeat;
+}
+@mixin bkg_common($url:false,$fixed:false){
+	@if($url){ background-image: url($url);}
+	@if($fixed){ background-attachment:fixed; }
 }
 
 @mixin divider($icons:false){
@@ -50,7 +66,7 @@
 }
 
 
-@mixin flexContainer($flow:row wrap,$axis:center,$caxis:flex-start){
+@mixin flexContainer($flow:row wrap,$axis:space-around,$caxis:stretch){
 	display: flex;
 	flex-flow: $flow;
 	justify-content: $axis;
