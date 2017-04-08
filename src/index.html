@@ -15,7 +15,7 @@
 					<h1 class="myname">Jose Nunez</h1>
 					<h1 class="myprofession">Portfolio</h1>
 					<!-- <img class="mypic" src="img/_avatar.jpg"> -->
-					<img class="mypic" src="img/_avatar2_crop.jpg">
+					<img id="mypic" class="mypic" src="img/_avatar2_crop.jpg">
 				</div>
 			</div>
 		</div>
@@ -161,5 +161,32 @@
 			Based on <a href="http://demos.webicode.com/html/zap/" target="_blank" >ZAP</a> web template.
 		</div>
 	</footer>
+	
+	<script type="text/javascript">
 
+		function getRandomInt(min, max) {
+    		return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+		function iteraFoto() {
+			var mispics = ["img/_avatar.jpg","img/_avatar2_crop.jpg","img/_avatar3.jpg"];
+			var i = 0;
+			setInterval(function(){ 
+				var pic = document.getElementById('mypic');
+				pic.src = mispics[i%2];
+				i++;
+			}, 5000);
+		}
+		function eligeFoto(argument) {
+			var mispics = ["img/_avatar.jpg","img/_avatar2_crop.jpg","img/_avatar3.jpg"];
+			var i = 0;
+			var pic = document.getElementById('mypic');
+			pic.src = mispics[getRandomInt(0,2)];
+		}
+		
+		eligeFoto();
+		var pic = document.getElementById('mypic');
+		pic.addEventListener('click',eligeFoto);
+		// cambiaFoto();
+	</script>
 </body>
+</html>
