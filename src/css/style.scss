@@ -85,10 +85,14 @@ header.main-header{
 			.mypic{
 				background-color:white;
 				height: $myheight;
+				width: $myheight;
 				// width: $myheight;
 				margin-bottom: -$myheight/2;
 				border:$border;
 				border-radius:50%;
+				&:hover{
+					cursor: pointer;
+				}
 			}
 		}
 	}
