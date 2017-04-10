@@ -84,13 +84,10 @@ header.main-header{
 				font-size: 3rem;
 				span.eng{display:initial;}
 				span.spa{color:#ffa00c;display:none;}
-				&:hover{
+				&.spa{
 					span.eng{display:none;}
 					span.spa{display:initial;}
 				}
-				/* &#name_spa span{
-					color: red;
-				} */
 			}
 			h1.myprofession{} 
 			.mypic{
