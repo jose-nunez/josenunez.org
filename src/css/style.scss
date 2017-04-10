@@ -82,6 +82,8 @@ header.main-header{
 			}
 			h1.myname{ 
 				font-size: 3rem;
+			}
+			h1.mylang{
 				span.eng{display:initial;}
 				span.spa{color:#ffa00c;display:none;}
 				&.spa{
@@ -89,7 +91,6 @@ header.main-header{
 					span.spa{display:initial;}
 				}
 			}
-			h1.myprofession{} 
 			.mypic{
 				background-color:white;
 				height: $myheight;
@@ -100,6 +101,8 @@ header.main-header{
 				border-radius:50%;
 				&:hover{
 					cursor: pointer;
+					/* box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
+					transition: box-shadow 0.5s; */
 				}
 			}
 		}

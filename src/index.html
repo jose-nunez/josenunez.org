@@ -12,8 +12,8 @@
 		<div class="header-bg-dark">
 			<div class="header-title-wrapper">
 				<div class="header-title">
-					<h1 id="myname" class="myname">Jos<span class="eng">e</span><span class="spa">é</span> N<span class="eng">u</span><span class="spa">ú</span><span class="eng">n</span><span class="spa">ñ</span>ez</h1>
-					<h1 class="myprofession">Portfolio</h1>
+					<h1 id="myname" class="myname mylang">Jos<span class="eng">e</span><span class="spa">é</span> N<span class="eng">u</span><span class="spa">ú</span><span class="eng">n</span><span class="spa">ñ</span>ez</h1>
+					<h1 id="myprofession" class="myprofession mylang">Port<span class="spa">a</span>folio<span class="spa">s</span></h1>
 					<!-- <img class="mypic" src="img/_avatar.jpg"> -->
 					<img id="mypic" class="mypic" src="img/_avatar2_crop.jpg">
 				</div>
@@ -171,9 +171,11 @@
 			getRandomInt: function(min, max) {
 	    		return Math.floor(Math.random() * (max - min + 1)) + min;
 			},
-			switchName: function(){
+			switchLang: function(){
 				var myname = document.getElementById('myname');
 				myname.classList.toggle('spa');
+				var myprofession = document.getElementById('myprofession');
+				myprofession.classList.toggle('spa');
 			},
 			nextPhoto: function(){
 				var pic = document.getElementById('mypic');
@@ -190,7 +192,7 @@
 		var pic = document.getElementById('mypic');
 		pic.addEventListener('click',function(event){
 			picturizer.nextPhoto();
-			picturizer.switchName();
+			picturizer.switchLang();
 		});
 		// cambiaFoto();
 	</script>
