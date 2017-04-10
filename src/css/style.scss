@@ -80,7 +80,18 @@ header.main-header{
 				// text-transform: uppercase;				
 				// font-size: 3rem;
 			}
-			h1.myname{ font-size: 3rem;}
+			h1.myname{ 
+				font-size: 3rem;
+				span.eng{display:initial;}
+				span.spa{color:#ffa00c;display:none;}
+				&:hover{
+					span.eng{display:none;}
+					span.spa{display:initial;}
+				}
+				/* &#name_spa span{
+					color: red;
+				} */
+			}
 			h1.myprofession{} 
 			.mypic{
 				background-color:white;
