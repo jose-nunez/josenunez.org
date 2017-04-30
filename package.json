@@ -18,5 +18,8 @@
     "gulp-uglify": "^2.1.2",
     "jshint": "^2.9.4",
     "jshint-stylish": "^2.2.1"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0"
   }
 }

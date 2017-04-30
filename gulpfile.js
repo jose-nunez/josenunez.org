@@ -14,7 +14,7 @@ var htmlmin = require('gulp-htmlmin');
 var imagemin = require('gulp-imagemin');
 // var inject = require('gulp-inject');
 // var print = require('gulp-print');
-
+// var phpMinify = require('@cedx/gulp-php-minify');
 /*
 	DIRECTORIES ______________________________________________________________________
 
@@ -39,11 +39,12 @@ var lib_src = [
 	// lib_dir+'leaflet-providers/leaflet-providers.js',
 ];
 var lib_css_src = [
-	// lib_dir+'leaflet/dist/leaflet.css',
+	lib_dir+'font-awesome/css/font-awesome.min.css',
+];
+var lib_other_src = [
+	lib_dir+'font-awesome/fonts/*',
 ];
 var lib_build = build_dir+'lib/';
-// var lib_target = src_dir+'mapDemo.php';
-// var lib_inject = lib_build +'*';
 
 var scss_src = src_dir+'*.scss';
 var scss_build = build_dir+'';
@@ -90,22 +91,26 @@ tasks.watch.push('script_w');
 
 
 /* JS LIBRARIES ____________________________________________________________________________*/
-/*gulp.task('lib', function() {
-	gulp.src(lib_src)
-		.pipe(rename({suffix:'.min'}))
+gulp.task('lib', function() {
+	gulp.src(lib_src,{base:lib_dir})
 		.pipe(uglify())
 		.pipe(gulp.dest(lib_build))
 
-	gulp.src(lib_css_src)
+	gulp.src(lib_css_src,{base:lib_dir})
 		.pipe(cleanCSS({compatibility: 'ie9'}))
 		.pipe(gulp.dest(lib_build))
+
+	gulp.src(lib_other_src,{base:lib_dir})
+		.pipe(gulp.dest(lib_build))
 });
-tasks.once.push('lib');*/
+tasks.once.push('lib');
 
 /* PHP ____________________________________________________________________________*/
 
 gulp.task('php',function() {
 	gulp.src(php_src,{base:src_dir})
+	// gulp.src(php_src,{base:src_dir,read:false})
+		// .pipe(phpMinify({binary: 'C:/xampp/php/php.exe'}))
 		.pipe(gulp.dest(php_build));
 });
 
