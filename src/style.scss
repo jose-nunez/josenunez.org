@@ -1,5 +1,15 @@
-@import 'fonts';
-@import 'mixins';
+/*!
+Theme Name: josenunez.org - Main Theme
+Theme URI: http://www.josenunez.org
+Description: A simple and minimalistic WordPress theme
+Author: Jose Nunez
+Author URI: http://www.josenunez.org
+Version: 1.0.0
+*/
+
+
+@import './css/fonts';
+@import './css/mixins';
 
 $screen-medium:550px;
 $screen-large: 960px;
@@ -50,7 +60,7 @@ header.main-header{
 		// height:70%;
 	}
 
-	@include bkg_cover($url:'../img/IMG_0629.jpg',$fixed:true);
+	@include bkg_cover($url:'./img/IMG_0629.jpg',$fixed:true);
 
 	border-bottom: solid 3px black;
 

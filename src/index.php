@@ -1,11 +1,23 @@
+<?php $URL = get_bloginfo('template_url'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Welcome to Jose Nunez Portfolio</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<?php
+		wp_register_script('josenunez_main_js',$URL.'/js/main.min.js');
+		if(wp_script_is('josenunez_main_js','registered') && !wp_script_is('josenunez_main_js','enqueued')) wp_enqueue_script('josenunez_main_js');
+
+		wp_enqueue_style( 'font-awesome', $URL.'/lib/font-awesome/css/font-awesome.min.css');
+
+		wp_head();
+	?>
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+
+	<script>
+		var URL = "<?php echo $URL; ?>";
+	</script>
 </head>
 <body>
 	<header class="main-header">
@@ -15,7 +27,7 @@
 					<h1 id="myname" class="myname mylang">Jos<span class="eng">e</span><span class="spa">é</span> N<span class="eng">u</span><span class="spa">ú</span><span class="eng">n</span><span class="spa">ñ</span>ez</h1>
 					<h1 id="myprofession" class="myprofession mylang">Port<span class="spa">a</span>folio<span class="spa">s</span></h1>
 					<!-- <img class="mypic" src="img/_avatar.jpg"> -->
-					<img id="mypic" class="mypic" src="img/_avatar2_crop.jpg" title="Click me!">
+					<img id="mypic" class="mypic" src="<?php echo $URL; ?>/img/_avatar2_crop.jpg" title="Click me!">
 				</div>
 			</div>
 		</div>
@@ -27,7 +39,7 @@
 				<div class="boxes-container">
 					<div class="box-item">
 						<!-- <div class="box-img" style="background-image:url('img/works/cafemanager.png')"> -->
-						<div class="box-img"><img src="img/works/cafemanager.png" /></div>
+						<div class="box-img"><img src="<?php echo $URL; ?>/img/works/cafemanager.png" /></div>
 						<h3 class="box-title">Cafe Manager</h3>
 						<!-- 
 						<ul class="box-list">
@@ -45,27 +57,21 @@
 											<i class="fa fa-home fa-stack-2x"></i>
 										</span>
 										<br />
-										Demo
-									</div>
-								</a>
+										Demo</div></a>
 								<a href="https://github.com/peponerock/cafemanager" target="_blank">
 									<div class="link-button">
 										<span class="fa-stack fa-lg">
 											<i class="fa fa-github fa-2x" aria-hidden="true"></i>
 										</span>
 										<br />
-										Client
-									</div>
-								</a>
+										Client</div></a>
 								<a href="https://github.com/peponerock/cafemanager_server" target="_blank">
 									<div class="link-button">
 										<span class="fa-stack fa-lg">
 											<i class="fa fa-github fa-2x" aria-hidden="true"></i>
 										</span>
 										<br />
-										Server
-									</div>
-								</a>
+										Server</div></a>
 						</div>
 						<div class="box-content">
 							Angular.js, Socket.io, Foundation, SASS, Node.js, Sequelize JS.
@@ -73,7 +79,7 @@
 					</div>
 					<div class="box-item">
 						<!-- <div class="box-img" style="background-image:url('img/works/bicimapa.png')"> -->
-						<div class="box-img"><img src="img/works/bicimapa.png" /></div>
+						<div class="box-img"><img src="<?php echo $URL; ?>/img/works/bicimapa.png" /></div>
 						<h3 class="box-title">Bicimapa</h3>
 						<div class="box-links">
 								<a href="http://bicimapa.josenunez.org" target="_blank">
@@ -101,7 +107,7 @@
 					</div>
 					<div class="box-item">
 						<!-- <div class="box-img" style="background-image:url('img/works/gladysarmijo.png')"> -->
-						<div class="box-img"><img src="img/works/gladysarmijo.png" /></div>
+						<div class="box-img"><img src="<?php echo $URL; ?>/img/works/gladysarmijo.png" /></div>
 						
 						<h3 class="box-title">Colectivo de Geografía Crítica Gladys Armijo</h3>
 						<div class="box-links">
@@ -122,7 +128,7 @@
 						</div>
 					</div>
 					<div class="box-item">
-						<div class="box-img"><img src="img/works/weatherconditions.png" /></div>
+						<div class="box-img"><img src="<?php echo $URL; ?>/img/works/weatherconditions.png" /></div>
 						
 						<h3 class="box-title">Weather conditions Wordpress plugin</h3>
 						<div class="box-links">
@@ -147,7 +153,7 @@
 					</div>
 					<div class="box-item">
 						<!-- <div class="box-img" style="background-image:url('img/works/portfolio.jpg')"> -->
-						<div class="box-img"><img src="img/works/portfolio.jpg" /></div>
+						<div class="box-img"><img src="<?php echo $URL; ?>/img/works/portfolio.jpg" /></div>
 						<h3 class="box-title">This same portfolio</h3>
 						<div class="box-links">
 								<a href="https://github.com/peponerock/josenunez.org" target="_blank">
@@ -183,40 +189,6 @@
 			Based on <a href="http://demos.webicode.com/html/zap/" target="_blank" >ZAP</a> web template.
 		</div>
 	</footer>
-	
-	<script type="text/javascript">
-
-		var picturizer = {
-			picindex:0,
-			myspics:["img/_avatar.jpg","img/_avatar2_crop.jpg","img/_avatar3.jpg"],
-
-			getRandomInt: function(min, max) {
-	    		return Math.floor(Math.random() * (max - min + 1)) + min;
-			},
-			switchLang: function(){
-				var myname = document.getElementById('myname');
-				myname.classList.toggle('spa');
-				var myprofession = document.getElementById('myprofession');
-				myprofession.classList.toggle('spa');
-			},
-			nextPhoto: function(){
-				var pic = document.getElementById('mypic');
-				this.picindex = this.picindex>=(this.myspics.length-1)? 0 : this.picindex+1;
-				pic.src = this.myspics[this.picindex];
-			},
-			randomPhoto: function(argument) {
-				var pic = document.getElementById('mypic');
-				this.picindex = this.getRandomInt(0,2);
-				pic.src = this.myspics[this.picindex];
-			},
-		}
-		picturizer.randomPhoto();
-		var pic = document.getElementById('mypic');
-		pic.addEventListener('click',function(event){
-			picturizer.nextPhoto();
-			picturizer.switchLang();
-		});
-		// cambiaFoto();
-	</script>
+	 <?php wp_footer(); ?>
 </body>
 </html>

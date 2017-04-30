@@ -44,7 +44,7 @@
 		/* Includes icons */
 		@each $icon in $icons {
 			&.divider-#{$icon} {
-				background-image:		url("../img/"+ $icon +".png");
+				background-image:		url("./img/"+ $icon +".png");
 				background-position:	center;
 				background-repeat:		no-repeat;
 				
