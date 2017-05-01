@@ -1,3 +1,39 @@
+<?php
+/**
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package JoseNunez.org
+ */
+
+get_header(); ?>
+
+	<h1>My works</h1>
+	<div class="divider divider-hammers"></div>
+	<div class="boxes-container">
+
+			<section id="content" role="main">
+				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+					<?php get_template_part( 'entry',get_post_format()); ?>
+					<?php comments_template(); ?>
+				<?php endwhile; endif; ?>
+				<?php get_template_part( 'nav', 'below' ); ?>
+			</section>
+
+	</div>
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
+
+
+<?php /*
+
+
 <?php $URL = get_bloginfo('template_url'); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -192,3 +228,6 @@
 	 <?php wp_footer(); ?>
 </body>
 </html>
+
+
+*/?>

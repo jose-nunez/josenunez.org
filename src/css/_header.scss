@@ -1,0 +1,78 @@
+header#header{
+	
+	@media (orientation:landscape){
+		// height:70%;
+	}
+
+	// @include bkg_cover($url:'./img/IMG_0629.jpg',$fixed:true);
+	@include bkg_cover($fixed:true);
+
+	border-bottom: solid 3px black;
+
+	.header-bg-dark{
+		height:100%;
+		background-color: rgba(0,0,0,.6);
+	
+		@include flexContainer($caxis:center);
+
+		padding:30px;
+
+		$myheight: 150px;
+		/* 
+		.header-title-wrapper{
+			margin-bottom: $myheight/2;
+		} */
+		
+		$orange: #ffa00c;
+		.header-title{
+			text-align: center;
+			color: white;
+			$border:4px white solid;
+			border: $border;
+			&.spa{border-color:$orange;}
+			border-radius:5px;
+			max-width: 100%;
+
+			// margin-bottom: $myheight/2 + 20px;
+			margin-bottom: $myheight/2;
+			a{
+				color:inherit;
+				&:hover{text-decoration: none;}
+				h1,h2{
+					margin: 1rem 2rem;
+					// text-transform: uppercase;				
+					// font-size: 3rem;
+				}
+				h1.myname{ font-size: 2.5rem; }
+				h1.myprofession{ font-size: 2rem; }
+				h1.mylang{
+					span.eng{display:initial;}
+					span.spa{color:$orange;display:none;}
+					&.spa{
+						span.eng{display:none;}
+						span.spa{display:initial;}
+					}
+				}
+			}
+			.mypic{
+				background-color:white;
+				height: $myheight;
+				width: $myheight;
+				// width: $myheight;
+				margin-bottom: -$myheight/2;
+				border:$border;
+				&.spa{border-color:$orange;}
+				border-radius:50%;
+				&:hover{
+					cursor: pointer;
+					/* box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
+					transition: box-shadow 0.5s; */
+				}
+			}
+			#site-description{
+
+			}
+		}
+	}
+	
+}

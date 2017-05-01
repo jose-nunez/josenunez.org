@@ -10,6 +10,10 @@ var picturizer = {
 		myname.classList.toggle('spa');
 		var myprofession = document.getElementById('myprofession');
 		myprofession.classList.toggle('spa');
+		var pic = document.getElementById('mypic');
+		pic.classList.toggle('spa');
+		var pic = document.getElementById('site-title');
+		pic.classList.toggle('spa');
 	},
 	nextPhoto: function(){
 		var pic = document.getElementById('mypic');
