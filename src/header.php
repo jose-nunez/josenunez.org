@@ -9,15 +9,17 @@
  * @package JoseNunez.org
  */
 
-?><!DOCTYPE html>
+?>
+<?php $URL = get_bloginfo('template_url'); ?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width" />
 	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
+	<link rel="icon" href="<?php echo $URL ?>/favicon.ico">
 	<?php wp_head(); ?>
 
-	<?php $URL = get_bloginfo('template_url'); ?>
 	<script>
 		var URL = "<?php echo $URL; ?>";
 	</script>
