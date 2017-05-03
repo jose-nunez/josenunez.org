@@ -1,6 +1,6 @@
 var picturizer = {
 	picindex:0,
-	myspics:["_avatar.jpg","_avatar2_crop.jpg","_avatar3.jpg"],
+	myspics:["_avatar_1.jpg","_avatar_2.jpg","_avatar_3.jpg"],
 
 	getRandomInt: function(min, max) {
 		return Math.floor(Math.random() * (max - min + 1)) + min;

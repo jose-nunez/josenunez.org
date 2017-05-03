@@ -38,10 +38,7 @@
 									<h1 id="myprofession" class="myprofession mylang">Port<span class="spa">a</span>folio<span class="spa">s</span></h1>
 								</a>
 								<h2 id="site-description"><?php bloginfo('description','display'); ?></h2>
-								<?php /*
-								<img id="mypic" class="mypic" src="<?php echo $URL; ?>/img/_avatar2_crop.jpg" title="Click me!">
-								*/?>
-								<img id="mypic" class="mypic" src="<?php echo $URL; ?>/img/_avatar2_crop.jpg" title="Click me!">
+								<img id="mypic" class="mypic" src="<?php echo $URL; ?>/img/_avatar_2.jpg" title="Click me!">
 							<?php  endif; ?>
 						</div>
 					</section>
