@@ -1,9 +1,9 @@
 <?php
 add_action( 'after_setup_theme', 'josenunez_org_setup' );
 function josenunez_org_setup(){
-	$DIR = get_bloginfo('template_url');
+	$URL = get_bloginfo('template_url');
 
-	load_theme_textdomain( 'josenunez_org', $DIR . '/languages' );
+	load_theme_textdomain( 'josenunez_org', $URL . '/languages' );
 	add_theme_support('title-tag');
 	add_theme_support('automatic-feed-links');
 	add_theme_support('post-thumbnails');
@@ -24,9 +24,9 @@ function josenunez_org_setup(){
 	register_nav_menus(array( 'main-menu' => __( 'Main Menu', 'josenunez_org' ) ));
 
 	/* CUSTOM */
-	wp_register_script('jno_main_js', $DIR.'/js/main.min.js');
-	wp_register_style( 'font-awesome', $DIR .'/lib/font-awesome/css/font-awesome.min.css');
-	wp_register_style( 'jno_style_admin', $DIR . '/style_admin.css');
+	wp_register_script('jno_main_js', $URL.'/js/main.min.js');
+	wp_register_style( 'font-awesome', $URL .'/lib/font-awesome/css/font-awesome.min.css');
+	wp_register_style( 'jno_style_admin', $URL . '/style_admin.css');
 
 	add_option('jno_front_category_id',1);
 }
@@ -97,7 +97,8 @@ function josenunez_org_comments_number( $count ){
 /* Admin */
 add_action('admin_menu','josenunez_org_admin');
 function josenunez_org_admin(){
-	add_menu_page('JoseNunez.org', 'JoseNunez.org', 'administrator', __FILE__,'josenunez_org_admin_page',plugins_url('/img/icon_20.png', __FILE__));
+	$URL = get_bloginfo('template_url');
+	add_menu_page('JoseNunez.org', 'JoseNunez.org', 'administrator', __FILE__,'josenunez_org_admin_page',$URL.'/img/icon_20.png');
 }
 
 
