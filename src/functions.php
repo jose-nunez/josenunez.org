@@ -24,14 +24,22 @@ function josenunez_org_setup(){
 	register_nav_menus(array( 'main-menu' => __( 'Main Menu', 'josenunez_org' ) ));
 
 	/* CUSTOM */
-	wp_register_script('josenunez_main_js', $DIR.'/js/main.min.js');
+	wp_register_script('jno_main_js', $DIR.'/js/main.min.js');
 	wp_register_style( 'font-awesome', $DIR .'/lib/font-awesome/css/font-awesome.min.css');
+	wp_register_style( 'jno_style_admin', $DIR . '/style_admin.css');
+
+	add_option('jno_front_category_id',1);
+}
+
+add_action('switch_theme', 'josenunez_org_deactivate');
+function josenunez_org_deactivate(){
+	delete_option('jno_front_category_id');
 }
 
 add_action( 'wp_enqueue_scripts', 'josenunez_org_load_scripts' );
 function josenunez_org_load_scripts(){
 	// wp_enqueue_script( 'jquery' );
-	wp_enqueue_script('josenunez_main_js');
+	wp_enqueue_script('jno_main_js');
 	wp_enqueue_style( 'font-awesome');
 }
 
@@ -82,4 +90,30 @@ function josenunez_org_comments_number( $count ){
 	} else {
 		return $count;
 	}
+}
+
+
+/* ********************************************************************* */
+/* Admin */
+add_action('admin_menu','josenunez_org_admin');
+function josenunez_org_admin(){
+	add_menu_page('JoseNunez.org', 'JoseNunez.org', 'administrator', __FILE__,'josenunez_org_admin_page',plugins_url('/img/icon_20.png', __FILE__));
+}
+
+
+add_action('admin_init', 'josenunez_org_register_settings');
+function josenunez_org_register_settings(){
+	register_setting('jno_setting','jno_front_category_id');
+}
+
+function josenunez_org_admin_page(){
+	if ( !current_user_can( 'manage_options' ) )  {
+		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+	}
+	require_once 'admin/admin.php';
+}
+
+add_action( 'admin_enqueue_scripts', 'josenunez_org_admin_style' );
+function josenunez_org_admin_style() {
+	wp_enqueue_style( 'jno_style_admin' );
 }

@@ -1,0 +1,11 @@
+
+// Convert px to %
+@function px-to-pc($target, $max-width) {
+  @return ($target/$max-width) * 100%;
+}
+// Calculate flex-basis with flexible margins
+@function per-line($items,$gutter,$max-width) {
+  $g-pct  : px-to-pc($gutter,$max-width) * 2;
+  $g-total: $items * $g-pct;
+  @return (100% / $items) - $g-total;
+}

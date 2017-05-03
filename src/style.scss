@@ -10,9 +10,11 @@ Version: 1.0.0
 
 @import './css/fonts';
 @import './css/mixins';
+@import './css/functions';
 
 $screen-medium:550px;
 $screen-large: 960px;
+$max-width: 960px;
 
 html,body{
 	height:		100%;
@@ -31,9 +33,7 @@ a{
 	color: #808080;
 	transition:color 0.2s;
 	
-	i.fa{
-		transition:font-size 0.2s;
-	}
+	i.fa{ transition:font-size 0.2s; }
 
 	&:visited{color: #808080;}
 
@@ -43,14 +43,17 @@ a{
 		transition:color 0.2s;
 		i.fa{
 			font-size: 2.2em;
-			/* &.fa-circle{ font-size: 2.2em}
-			&.fa-link{ font-size: 1.2em}
-
-			&.fa-github{ font-size: 2.2em} */
-			
 			transition:font-size 0.2s;
 		}
 	}
+}
+h1 a,h2 a,h3 a{color: black;}
+
+.justify{
+    text-align: justify;
+}
+div.paragraph{
+	margin: 20px 0px 20px 0px;
 }
 
 $icons: hammers; // Just one so far!
@@ -63,7 +66,7 @@ $icons: hammers; // Just one so far!
 #container{
 	// @include bkg_cover($url:'../img/IMG_1243.jpg',$fixed:true);
 
-	max-width:960px;
+	max-width:$max-width;
 	margin: auto;
 	overflow:hidden;
 	// border: solid 1px red;/* TEMP */
@@ -76,92 +79,85 @@ $icons: hammers; // Just one so far!
 	// background-color:#8ae03a;/* TEMP */
 	
 	@include flexContainer($axis:center);
-	// padding: 0 30px;
 
-	.box-item{
-		// background-color:#ffffff;/* TEMP */
-
-		flex-basis:90%;
-
-		margin-bottom: 20px;
-
-		box-shadow: 0px 0 10px rgba(0,0,0,0.1);
-		border: 2px solid rgba(0,0,0,0.1);
-		padding: 0 0 10px 0;
+	.entry-item{
 		
-		$trans-speed: 0.3s;
-
-		.box-img{
-			text-align: center;
-			height: 100px;
-			margin: 10px 10px 0 10px;
-			// @include bkg_contain();
-			img{
-				max-height: 100%;
-				max-width: 100%;
-				// border:none;
-				
-				opacity: 0.5;
-				transition: opacity $trans-speed;
-			}
+		// flex-basis: per-line(1,0px,$screen-medium);
+		flex-basis: 90%;
+		margin-bottom: 20px;
+		
+		&.image-rounded .entry-img img{
+			border-radius:50%;
 		}
 
-		&:hover{
-			box-shadow: 0 0 3px rgba(0,0,0,0.2);
-			transition: box-shadow $trans-speed;
-			.box-img img{
-				opacity: 1;
-				transition: opacity $trans-speed;
-			}
-		}
+		.entry-item-inner{
+			// background-color:#ffffff;/* TEMP */
+			width: 100%;
+			padding-top: 10px;
+			padding-bottom: 10px;
 
-
-		h3.box-title{
-			margin-bottom: 0px; 
-			text-align:center;
-			padding:0px 10px;
-		}
-		/* .box-list{
-			column-count: 2;
-			list-style: none;
-		} */
-		.box-links{
-			text-align: center;
-			// a{
-			// 	color: #808080;
-			// 	transition:color 0.4s;
-			// 	&:visited{color: #808080;}
-			// 	&:hover{
-			// 		color: #000;
-			// 		transition:color 0.4s;
-			// 	}
-			// }
-			.link-button{
-				text-align: center;
-				display: inline-block;
-				margin: 10px 15px 0 15px;
-				span{
-
+			box-shadow: 0px 0 10px rgba(0,0,0,0.1);
+			border: 2px solid rgba(0,0,0,0.1);
+			
+			$trans-speed: 0.3s;
+			&:hover{
+				box-shadow: 0 0 3px rgba(0,0,0,0.2);
+				transition: box-shadow $trans-speed;
+				.entry-img img{
+					opacity: 1;
+					transition: opacity $trans-speed;
 				}
-				
 			}
-		}
-		.box-content{
-			padding:15px 10px 0 10px;
+			.entry-img{
+				text-align: center;
+				height: 100px;
+				img{
+					max-height: 100%;
+					max-width: 100%;
+					opacity: 0.5;
+					transition: opacity $trans-speed;
+				}
+			}
+
+			.entry-section{
+				margin-left: 15px;
+				margin-right: 15px;
+			}
+
+			.entry-title{
+				// margin-bottom: 0px; 
+				text-align:center;
+				// padding:0px 10px;
+			}
+			.entry-links{
+				text-align: center;
+				.link-button{
+					text-align: center;
+					display: inline-block;
+					margin: 0px 15px;
+				}
+			}
+			.entry-summary{
+				// padding:15px 10px 0 10px;
+			}
+
 		}
 	}
+
+	$gutter:10px;
 	@media (min-width: $screen-medium){
-		.box-item{
-			margin-left: 10px;
-			margin-right: 10px;
-			flex-basis:45%;
+		.entry-item{
+			margin-left: $gutter;
+			margin-right: $gutter;
+
+			// flex-basis: per-line(2,$gutter,$screen-large);
+			flex-basis: 45%;
 		}
 	}
 	@media (min-width: $screen-large){
-		.box-item{
-			margin-left: 10px;
-			margin-right: 10px;
-			flex-basis:30%;
+		.entry-item{
+			// flex-basis: per-line(3,$gutter,$max-width);
+			flex-basis: 30%;
 		}
 	}
 }

@@ -26,23 +26,25 @@
 	<div id="wrapper" class="hfeed">
 		<header id="header" role="banner" style="background-image:url(<?php echo get_header_image(); ?>)">
 			<div class="header-bg-dark">
-				<div class="header-title-wrapper">
+				<!-- <div class="header-title-wrapper"> -->
 					<section id="branding">
 						<div id="site-title" class="header-title">
 
-							<?php $printTitle = is_front_page() || is_home() ?>
-							<?php if($printTitle): ?>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html(get_bloginfo('name')); ?>" rel="home">
-								<h1 id="myname" class="myname mylang">Jos<span class="eng">e</span><span class="spa">é</span> N<span class="eng">u</span><span class="spa">ú</span><span class="eng">n</span><span class="spa">ñ</span>ez</h1>
-								<h1 id="myprofession" class="myprofession mylang">Port<span class="spa">a</span>folio<span class="spa">s</span></h1>
-							</a>
-							<h2 id="site-description"><?php bloginfo('description','display'); ?></h2>
-							<img id="mypic" class="mypic" src="<?php echo $URL; ?>/img/_avatar2_crop.jpg" title="Click me!">
+							<?php if(is_front_page() || is_home()): ?>
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html(get_bloginfo('name')); ?>" rel="home">
+									<h1 id="myname" class="myname mylang">Jos<span class="eng">e</span><span class="spa">é</span> N<span class="eng">u</span><span class="spa">ú</span><span class="eng">n</span><span class="spa">ñ</span>ez</h1>
+									<h1 id="myprofession" class="myprofession mylang">Port<span class="spa">a</span>folio<span class="spa">s</span></h1>
+								</a>
+								<h2 id="site-description"><?php bloginfo('description','display'); ?></h2>
+								<?php /*
+								<img id="mypic" class="mypic" src="<?php echo $URL; ?>/img/_avatar2_crop.jpg" title="Click me!">
+								*/?>
+								<img id="mypic" class="mypic" src="<?php echo $URL; ?>/img/_avatar2_crop.jpg" title="Click me!">
 							<?php  endif; ?>
 						</div>
 					</section>
 
-				</div>
+				<!-- </div> -->
 			</div>
 		</header>
 		
