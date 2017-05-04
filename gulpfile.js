@@ -46,7 +46,7 @@ var lib_other_src = [
 ];
 var lib_build = build_dir+'lib/';
 
-var scss_src = src_dir+'*.scss';
+var scss_src = src_dir+'**/*.scss';
 var scss_build = build_dir+'';
 
 var img_src = src_dir+'img/**';
