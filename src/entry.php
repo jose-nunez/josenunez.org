@@ -7,7 +7,10 @@
 								<?php endif; ?>
 								<?php if (is_singular()){ echo '<h1>'; } 
 								else { echo '<h3>'; } ?>
+								<?php /*
 									<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a>
+								*/ ?>
+									<?php the_title(); ?>
 								<?php if ( is_singular() ) { echo '</h1>'; } 
 								else { echo '</h3>'; } ?>
 								<?php //edit_post_link(); ?>

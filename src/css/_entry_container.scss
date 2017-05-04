@@ -12,7 +12,7 @@
 	/* $screen-medium:$entry-item-min-w*2+$gutter*4;
 	$screen-large:$entry-item-max-w*2+$gutter*4; */
 	$scroll-width:20px; /* HACK */
-	$screen-medium:$entry-item-min-w*2 + $scroll-width;
+	$screen-medium:$entry-item-min-w*2 + $scroll-width; // HACK
 	$screen-large:$entry-item-min-w*3 + $scroll-width;
 
 	@media (min-width:$screen-medium){
