@@ -19,7 +19,7 @@ get_header();
 	<h1><?php single_cat_title() ?></h1>
 	<div class="divider divider-hammers"></div>
 	<div class="paragraph justify"><?php echo category_description(); ?></div>
-	<section id="content" class="boxes-container" role="main">
+	<section id="content" class="entry-container" role="main">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<?php get_template_part( 'entry',get_post_format()); ?>
 			<?php comments_template(); ?>

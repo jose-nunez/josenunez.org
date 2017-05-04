@@ -21,43 +21,40 @@
 	@if($fixed){ background-attachment:fixed; }
 }
 
-@mixin divider($icons:false){
-	.divider{
-		text-align:	center;
-		margin:		1.5rem 0;
-		height:		21px;
-		
-		&::before,&::after{
-			display:	inline-block;
-			border-top:	2px solid rgba(20, 20, 20, 0.2);
-			height:		2px;
-			width:		25%;
-			content:	"";
-		}
+@mixin divider($icons:false,$width:25%){
+	text-align:	center;
+	margin:		1.5rem 0;
+	height:		21px;
 	
-		/* Any content inside */
-		/* &>*{
-			// margin:		1.5rem 0;
-			margin-right:10px;
-			margin-left:10px;
-		} */
-		/* Includes icons */
-		@each $icon in $icons {
-			&.divider-#{$icon} {
-				background-image:		url("./img/"+ $icon +".png");
-				background-position:	center;
-				background-repeat:		no-repeat;
-				
-				&::before{
-					margin-right:20px;
-				}
-				&::after{
-					margin-left:20px;
-				}
+	&::before,&::after{
+		display:	inline-block;
+		border-top:	2px solid rgba(20, 20, 20, 0.2);
+		height:		2px;
+		width:		$width;
+		content:	"";
+	}
+
+	/* Any content inside */
+	/* &>*{
+		// margin:		1.5rem 0;
+		margin-right:10px;
+		margin-left:10px;
+	} */
+	/* Includes icons */
+	@each $icon in $icons {
+		&.divider-#{$icon} {
+			background-image:		url("./img/"+ $icon +".png");
+			background-position:	center;
+			background-repeat:		no-repeat;
+			
+			&::before{
+				margin-right:20px;
+			}
+			&::after{
+				margin-left:20px;
 			}
 		}
 	}
-
 	/* Combinated with headers */
 	// @for $i from 1 through 3 {
 	// 	h#{$i} + .divider{ margin-top: 0; }
@@ -73,3 +70,16 @@
 	align-items: $caxis;
 	article{display:flex;}
 }
+
+ 
+
+// @mixin felxgrid($flexitem){
+// 	#{$flexitem}{
+// 		background-color:lightblue;
+// 	}
+// } 
+
+
+
+
+
