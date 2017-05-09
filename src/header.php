@@ -14,15 +14,15 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+	<script>
+		var siteURL = "<?php echo $URL; ?>";
+	</script>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width" />
 	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
 	<link rel="icon" href="<?php echo $URL ?>/img/favicon.ico">
 	<?php wp_head(); ?>
 
-	<script>
-		var URL = "<?php echo $URL; ?>";
-	</script>
 </head>
 <body <?php body_class(); ?>>
 	<div id="wrapper" class="hfeed">
@@ -38,7 +38,7 @@
 									<h1 id="myprofession" class="myprofession mylang">Port<span class="spa">a</span>folio<span class="spa">s</span></h1>
 								</a>
 								<h2 id="site-description"><?php bloginfo('description','display'); ?></h2>
-								<img id="mypic" class="mypic" src="<?php echo $URL; ?>/img/_avatar_2.jpg" title="Click me!">
+								<!-- <img id="mypic" class="mypic" src="<?php echo $URL; ?>/img/_avatar_2.jpg" title="Click me!"> -->
 							<?php  endif; ?>
 						</div>
 					</section>
