@@ -1,4 +1,8 @@
-
+@mixin text_columns($colcount:2,$gap:30px){
+	columns: auto $colcount;
+	column-gap:$gap;
+	p:first-child{ margin-top:0px;}
+}
 
 @mixin bkg_contain($url:false,$fixed:false){
 	background-size: contain;

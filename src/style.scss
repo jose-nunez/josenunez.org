@@ -67,6 +67,10 @@ $icons:'hammers'; // Just one so far!
 	@include divider($icons,25%);
 }
 
+.text-columns-2{
+	@include text_columns(2);
+}
+
 /* HEADER ___________________________________________________________________________________________ */
 @import './css/header';
 
