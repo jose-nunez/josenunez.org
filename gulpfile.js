@@ -23,9 +23,10 @@ var imagemin = require('gulp-imagemin');
 
 var lib_dir = 'node_modules/';
 var src_dir = "src/";
-var build_dir = "E:/Dropbox/DESARROLLO/josenunez.org/TEST/wp-content/themes/josenunez/";
+var build_dir = "../TEST/wp-content/themes/josenunez/";
 
 var script_src = src_dir+'js/*.js';
+var script_test_src = src_dir+'js/test.js';
 var script_concat='main.js';
 var script_build = build_dir+'js/';
 
@@ -76,12 +77,21 @@ gulp.task('script_err', function() {
 });
 
 gulp.task('script', function() {
-	gulp.src(script_src)
+	var scripts = [
+		'!'+script_test_src,
+		script_src,
+	];
+
+	gulp.src(scripts)
 		.pipe(concat(script_concat))
 			.pipe(gulp.dest(script_build))
 		.pipe(rename({suffix:'.min'}))
 		.pipe(uglify())
 			.pipe(gulp.dest(script_build))
+	;
+
+	gulp.src(script_test_src)
+		.pipe(gulp.dest(script_build))
 	;
 });
 gulp.task('script_w', function(){gulp.watch(script_src,['script']);});

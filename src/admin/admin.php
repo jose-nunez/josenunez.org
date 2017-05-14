@@ -1,17 +1,12 @@
 <?php
 	if(!isset( $_REQUEST['updated'])) $_REQUEST['updated'] = false;
 	$jno_front_category_id = get_option('jno_front_category_id');
+	$jno_test_page_id = get_option('jno_test_page_id');
 
 ?>
 <div id="jno-container">
 	<h1>JoseNunez.org Theme</h1>
 	<div>
-		<?php 
-			/*$cats = get_categories();
-			foreach($cats as $cat): 
-				echo '<pre>'. print_r($cat,true) . '</pre>'; 
-			 endforeach; */
-		?>
 		<form action="options.php" method="post">
 			<?php settings_fields('jno_setting'); ?>
 			<label for="jno_front_category_id">
