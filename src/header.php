@@ -22,7 +22,6 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
 	<link rel="icon" href="<?php echo $URL ?>/img/favicon.ico">
 	<?php wp_head(); ?>
-
 </head>
 <body <?php body_class(); ?>>
 	<div id="wrapper" class="hfeed">
