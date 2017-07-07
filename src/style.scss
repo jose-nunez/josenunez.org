@@ -69,6 +69,7 @@ div.paragraph{
 $icons:'hammers'; // Just one so far!
 .divider{
 	@include divider($icons,25%);
+	margin-bottom: 2rem;
 }
 
 .text-columns-2{
