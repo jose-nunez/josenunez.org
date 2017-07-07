@@ -27,7 +27,6 @@
 
 @mixin divider($icons:false,$width:25%){
 	text-align:	center;
-	margin:		1.5rem 0;
 	height:		21px;
 	
 	&::before,&::after{
