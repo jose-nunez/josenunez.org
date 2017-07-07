@@ -1,4 +1,13 @@
 <?php
+
+//[foobar]
+function shortode_divider( $atts ){
+	return '<div class="divider divider-'. ($atts->style? $atts->style:'hammers') .'"></div>';
+}
+add_shortcode( 'divider', 'shortode_divider' );
+
+/* ______________________________________________________________________________________-- */
+
 add_action( 'after_setup_theme', 'josenunez_org_setup' );
 function josenunez_org_setup(){
 	$URL = get_bloginfo('template_url');
