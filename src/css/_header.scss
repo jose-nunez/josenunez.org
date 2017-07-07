@@ -1,13 +1,10 @@
 header#header{
+	margin-bottom: 2rem;
+	border-bottom: solid 3px black;
 	
-	@media (orientation:landscape){
-		// height:70%;
-	}
-
 	// @include bkg_cover($url:'./img/IMG_0629.jpg',$fixed:true);
 	@include bkg_cover($fixed:true);
-
-	border-bottom: solid 3px black;
+	@media (orientation:landscape){ /* height:70%; */}
 
 	.header-bg-dark{
 		height:100%;
@@ -29,6 +26,7 @@ header#header{
 			&.spa{border-color:$orange;}
 			border-radius:5px;
 			max-width: 100%;
+			padding: 0 10px 0 10px;
 
 			// margin-bottom: $myheight/2 + 20px;
 			margin-bottom: $myheight/2;
