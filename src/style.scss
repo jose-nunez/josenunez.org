@@ -82,6 +82,16 @@ $icons:'hammers'; // Just one so far!
 
 /* MAIN CONTENT ___________________________________________________________________________________________ */
 $gral-padding:15px;
+
+
+header.header{
+	position: relative;
+	a.post-edit-link{
+		position: absolute;
+		top: 0; 
+	}
+}
+
 #container{
 	// @include bkg_cover($url:'../img/IMG_1243.jpg',$fixed:true);
 	max-width:$container-max-width;
