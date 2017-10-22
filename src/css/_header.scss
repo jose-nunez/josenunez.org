@@ -1,6 +1,13 @@
+$picture_height: 150px;
+$img_border:6px white solid;
+$orange: #ffa00c;
+// $menu_top_margin: 40px;
+
 header#header{
 	// margin-bottom: 2rem;
 	border-bottom: solid 3px black;
+	color: white;
+	text-shadow: 0px 0px 10px rgba(0,0,0,0.5);
 	
 	// @include bkg_cover($url:'./img/IMG_0629.jpg',$fixed:true);
 	@include bkg_cover($fixed:true);
@@ -9,36 +16,27 @@ header#header{
 	.header-bg-dark{
 		height:100%;
 		background-color: rgba(0,0,0,.6);
-	
-		@include flexContainer($caxis:center);
+		// @include flexContainer($caxis:center);
 
-		padding:30px;
-
-		$myheight: 150px;
-		/* .header-title-wrapper{margin-bottom: $myheight/2;} */
+		padding-top:30px;
 		
-		$orange: #ffa00c;
 		.header-title{
 			text-align: center;
-			color: white;
-			$border:4px white solid;
-			border: $border;
-			&.spa{border-color:$orange;}
-			border-radius:5px;
+			
+			// border: $img_border;
+			// &.spa{border-color:$orange;}
+			// border-radius:5px;
+			
 			max-width: 100%;
-			padding: 0 10px 0 10px;
+			padding: 0 10px;
 
-			// margin-bottom: $myheight/2 + 20px;
-			margin-bottom: $myheight/2;
+			// margin-bottom: $picture_height/2 + $menu_top_margin;
+			margin-bottom: $picture_height/2;
 			a{
 				color:inherit;
 				&:hover{text-decoration: none;}
-				h1,h2{
-					margin: 1rem 2rem;
-					// text-transform: uppercase;				
-					// font-size: 3rem;
-				}
-				h1.myname{ font-size: 2.5rem; }
+				h1,h2{ margin: 0; }
+				h1.myname{ font-size: 5rem; }
 				h1.myprofession{ font-size: 2rem; }
 				h1.mylang{
 					span.eng{display:initial;}
@@ -51,13 +49,15 @@ header#header{
 			}
 			.mypic{
 				background-color:white;
-				height: $myheight;
-				width: $myheight;
-				// width: $myheight;
-				margin-bottom: -$myheight/2;
-				border:$border;
+				height: $picture_height;
+				width: $picture_height;
+				// width: $picture_height;
+				margin-bottom: -$picture_height/2;
+				
+				border:$img_border;
 				&.spa{border-color:$orange;}
 				border-radius:50%;
+				
 				&:hover{
 					cursor: pointer;
 					/* box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
@@ -66,6 +66,43 @@ header#header{
 			}
 			#site-description{
 
+			}
+		}
+		#main-menu{
+			text-align: center;
+
+			#menu-main-menu{
+				font-size: 1.7rem;
+			}
+			#menu-social-menu{
+				font-size: 2.3rem;
+			}
+
+			ul{
+				// color:white;
+				font-size: 1.7rem;
+				padding: 0;
+				margin: 0;
+				li{
+					margin-top: 20px;
+					display: inline-block;
+					a{
+						color:inherit;
+						display: inline-block;
+						padding: 10px 10px;
+						&:hover{
+							color: $orange;
+							text-decoration: none;
+						}
+					}
+
+					&.nolabel > a {
+						padding: 10px 25px;
+						> span.fontawesome-text{
+							display:none;
+						}
+					}
+				}
 			}
 		}
 	}

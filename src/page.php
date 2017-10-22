@@ -4,7 +4,7 @@
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<header class="header">
+			<header id="<?= is_front_page()?"home-":"" ?>page-header" class="header">
 				<h1 class="entry-title"><?php the_title(); ?></h1>
 				<div class="divider divider-hammers"></div>
 				<?php edit_post_link(); ?>

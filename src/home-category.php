@@ -12,10 +12,13 @@
 		$cat_id=get_option('jno_front_category_id'); 
 		query_posts( 'cat='.$cat_id ); 
 	?>
-	
-	<h1><?php single_cat_title() ?></h1>
-	
-	<div class="divider divider-hammers"></div>
+	<?php /*
+	<header id="<?= is_home()?"home-":"" ?>category-header" class="header">
+	*/ ?>
+	<header id="home-category-header" class="header">
+		<h1><?php single_cat_title() ?></h1>
+		<div class="divider divider-hammers"></div>
+	</header>
 	
 	<?php if (category_description()): ?>
 		<div class="paragraph justify text-columns-2"><?php echo category_description(); ?></div>

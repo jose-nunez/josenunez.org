@@ -24,7 +24,7 @@
 
 		<footer>
 			<div class="disclaimer">
-				Based on <a href="http://demos.webicode.com/html/zap/" target="_blank" >ZAP</a> web template and <a href="http://tidythemes.com/">BlankSlate</a> Wordpress theme.
+				Design inspired on <a href="http://demos.webicode.com/html/zap/" target="_blank" >ZAP</a> web template. Wordpress theme boilerplate: <a href="http://tidythemes.com/">BlankSlate</a>.
 			</div>
 		</footer>
 		 <?php wp_footer(); ?>

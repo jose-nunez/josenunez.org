@@ -31,6 +31,7 @@ function josenunez_org_setup(){
 	
 
 	register_nav_menus(array( 'main-menu' => __( 'Main Menu', 'josenunez_org' ) ));
+	register_nav_menus(array( 'social-menu' => __( 'Social Menu', 'josenunez_org' ) ));
 
 	/* CUSTOM */
 	wp_register_script('jno_main_js', $URL.'/js/main.min.js');
